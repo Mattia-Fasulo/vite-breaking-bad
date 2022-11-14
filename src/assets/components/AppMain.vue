@@ -7,8 +7,8 @@
             </div>
 
             <div class="row">
-                <div class="col col-sm-6 col-md-4 col-lg-3">
-                    <CardComponent />>
+                <div class="col col-sm-6 col-md-4 col-lg-3" v-for="(item, index) in characters" :key="item.id">
+                    <CardComponent :obj="item" />
                 </div>
 
 
@@ -26,6 +26,9 @@ export default {
     name: "AppMain",
     components: {
         CardComponent
+    },
+    props: {
+        characters: String
     }
 }
 </script>

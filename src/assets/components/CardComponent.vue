@@ -1,20 +1,22 @@
 <template>
     <div class="my-card">
         <div class="my-card-img">
-            <img src="https://vignette.wikia.nocookie.net/breakingbad/images/a/a2/Tess_Harper.jpg/revision/latest?cb=20120923235754"
-                alt="Harper">
+            <img :src="obj.img" :alt="obj.name">
         </div>
         <div class="my-card-text">
-            <h3>Harper</h3>
-            <p>Breaking Bad</p>
-            <span>Alive</span>
+            <h3>{{ obj.name }}</h3>
+            <p>{{ obj.category }}</p>
+            <span>{{ obj.status }}</span>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "CardComponent"
+    name: "CardComponent",
+    props: [
+        "obj"
+    ]
 }
 </script>
 
