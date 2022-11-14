@@ -26,15 +26,19 @@ export default {
 
 .my-card {
     width: 100%;
-    height: 100%;
+    height: 390px;
+    margin: 30px 0;
     background-color: $dark-grey;
+
 
     .my-card-img {
         padding: 10px;
         width: 100%;
 
+
         img {
             width: 100%;
+            height: 250px;
         }
     }
 
