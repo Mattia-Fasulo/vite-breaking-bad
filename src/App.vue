@@ -37,10 +37,13 @@ export default {
       axios.get(this.apiURL).then(
         (res) => {
           this.characterList = [...res.data];
-          console.log(this.characterList)
-          // this.findCharacter('Lydia Rodarte-Quayle');
-          // this.characterList = this.characterList.slice(14, 0)
           // console.log(this.characterList)
+          this.findCharacter('Lydia Rodarte-Quayle');
+          this.characterList.splice(13, 1);
+          this.findCharacter('Skinny Pete');
+          this.characterList.splice(15, 1);
+          this.findCharacter('Holly White');
+          this.characterList.splice(36, 1);
         }
       )
     }
