@@ -8,70 +8,9 @@
 
             <div class="row">
                 <div class="col col-sm-6 col-md-4 col-lg-3">
-                    <div class="my-card">
-                        <div class="my-card-img">
-                            <img src="https://vignette.wikia.nocookie.net/breakingbad/images/a/a2/Tess_Harper.jpg/revision/latest?cb=20120923235754"
-                                alt="Harper">
-                        </div>
-                        <div class="my-card-text">
-                            <h3>Harper</h3>
-                            <p>Breaking Bad</p>
-                            <span>Alive</span>
-                        </div>
-                    </div>
+                    <CardComponent />>
                 </div>
-                <div class="col col-sm-6 col-md-4 col-lg-3">
-                    <div class="my-card">
-                        <div class="my-card-img">
-                            <img src="https://vignette.wikia.nocookie.net/breakingbad/images/a/a2/Tess_Harper.jpg/revision/latest?cb=20120923235754"
-                                alt="Harper">
-                        </div>
-                        <div class="my-card-text">
-                            <h3>Harper</h3>
-                            <p>Breaking Bad</p>
-                            <span>Alive</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-sm-6 col-md-4 col-lg-3">
-                    <div class="my-card">
-                        <div class="my-card-img">
-                            <img src="https://vignette.wikia.nocookie.net/breakingbad/images/a/a2/Tess_Harper.jpg/revision/latest?cb=20120923235754"
-                                alt="Harper">
-                        </div>
-                        <div class="my-card-text">
-                            <h3>Harper</h3>
-                            <p>Breaking Bad</p>
-                            <span>Alive</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-sm-6 col-md-4 col-lg-3">
-                    <div class="my-card">
-                        <div class="my-card-img">
-                            <img src="https://vignette.wikia.nocookie.net/breakingbad/images/a/a2/Tess_Harper.jpg/revision/latest?cb=20120923235754"
-                                alt="Harper">
-                        </div>
-                        <div class="my-card-text">
-                            <h3>Harper</h3>
-                            <p>Breaking Bad</p>
-                            <span>Alive</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-sm-6 col-md-4 col-lg-3">
-                    <div class="my-card">
-                        <div class="my-card-img">
-                            <img src="https://vignette.wikia.nocookie.net/breakingbad/images/a/a2/Tess_Harper.jpg/revision/latest?cb=20120923235754"
-                                alt="Harper">
-                        </div>
-                        <div class="my-card-text">
-                            <h3>Harper</h3>
-                            <p>Breaking Bad</p>
-                            <span>Alive</span>
-                        </div>
-                    </div>
-                </div>
+
 
 
 
@@ -82,8 +21,12 @@
 </template>
 
 <script>
+import CardComponent from './CardComponent.vue'
 export default {
-    name: "AppMain"
+    name: "AppMain",
+    components: {
+        CardComponent
+    }
 }
 </script>
 
@@ -119,38 +62,6 @@ main {
         }
     }
 
-    .my-card {
-        width: 100%;
-        height: 100%;
-        background-color: $dark-grey;
 
-        .my-card-img {
-            padding: 10px;
-            width: 100%;
-
-            img {
-                width: 100%;
-            }
-        }
-
-        .my-card-text {
-            padding: 1rem;
-            text-align: center;
-
-            h3 {
-                text-transform: uppercase;
-                font-size: 1rem;
-            }
-
-            p {
-                margin-bottom: 0px;
-            }
-
-            p,
-            span {
-                color: grey;
-            }
-        }
-    }
 }
 </style>
