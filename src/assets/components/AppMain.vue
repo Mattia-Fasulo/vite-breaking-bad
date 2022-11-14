@@ -28,7 +28,7 @@ export default {
         CardComponent
     },
     props: {
-        characters: String
+        characters: Array
     }
 }
 </script>

@@ -23,20 +23,35 @@ export default {
     }
   },
   methods: {
+
+
+    findCharacter(text) {
+      const index = this.characterList.findIndex(object => {
+        return object.name === text;
+      });
+      console.log(index)
+    },
+
     getCharacters() {
       this.loading = true
       axios.get(this.apiURL).then(
         (res) => {
           this.characterList = [...res.data];
           console.log(this.characterList)
-
+          // this.findCharacter('Lydia Rodarte-Quayle');
+          // this.characterList = this.characterList.slice(14, 0)
+          // console.log(this.characterList)
         }
       )
     }
   },
   created() {
     this.getCharacters()
+  },
+  mounted() {
+
   }
+
 }
 </script>
 
