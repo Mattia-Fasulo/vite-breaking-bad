@@ -1,6 +1,9 @@
 <template>
     <header>
-
+        <div class="logo">
+            <img src="/images/Breaking_Bad_logo.svg" alt="logo">
+            <h1>Breaking Bad Api</h1>
+        </div>
     </header>
 </template>
 
@@ -12,5 +15,15 @@ export default {
 
 
 <style lang="scss" scoped>
+@use '../styles/partials/mixins' as *;
 
+.logo {
+    @include center('horizontal');
+    padding: 1rem;
+
+    img {
+        width: 70px;
+        margin-right: 10px;
+    }
+}
 </style>
