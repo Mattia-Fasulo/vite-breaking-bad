@@ -17,6 +17,10 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixins' as *;
 
+header {
+    height: 100px
+}
+
 .logo {
     @include center('horizontal');
     padding: 1rem;

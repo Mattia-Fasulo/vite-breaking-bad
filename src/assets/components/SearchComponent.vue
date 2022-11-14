@@ -16,6 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+    height: 50px;
     margin-top: 2rem;
 
     select {
