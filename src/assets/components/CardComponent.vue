@@ -26,7 +26,7 @@ export default {
 
 .my-card {
     width: 100%;
-    height: 390px;
+    height: 400px;
     margin: 30px 0;
     background-color: $dark-grey;
 

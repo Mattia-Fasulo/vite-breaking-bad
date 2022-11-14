@@ -25,11 +25,12 @@ export default {
   methods: {
 
 
-    findCharacter(text) {
+    findDeleteCharacter(text) {
       const index = this.characterList.findIndex(object => {
         return object.name === text;
       });
-      console.log(index)
+      this.characterList.splice(index, 1);
+      // console.log(index)
     },
 
     getCharacters() {
@@ -38,12 +39,10 @@ export default {
         (res) => {
           this.characterList = [...res.data];
           // console.log(this.characterList)
-          this.findCharacter('Lydia Rodarte-Quayle');
-          this.characterList.splice(13, 1);
-          this.findCharacter('Skinny Pete');
-          this.characterList.splice(15, 1);
-          this.findCharacter('Holly White');
-          this.characterList.splice(36, 1);
+          this.findDeleteCharacter('Lydia Rodarte-Quayle');
+          this.findDeleteCharacter('Skinny Pete');
+          this.findDeleteCharacter('Holly White');
+
         }
       )
     }

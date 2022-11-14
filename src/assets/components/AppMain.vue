@@ -7,7 +7,7 @@
             </div>
 
             <div class="row">
-                <div class="col col-sm-6 col-md-4 col-lg-3" v-for="(item, index) in characters" :key="item.id">
+                <div class="col col-md-6" v-for="(item, index) in characters" :key="item.id">
                     <CardComponent :obj="item" />
                 </div>
 
@@ -28,7 +28,7 @@ export default {
         CardComponent
     },
     props: {
-        characters: Array
+        characters: []
     }
 }
 </script>
