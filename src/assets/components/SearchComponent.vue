@@ -1,17 +1,35 @@
 <template>
     <div class="container">
-        <select>
-            <option value="0">Select Category</option>
-            <option value="1">Prova 1</option>
-            <option value="2">Prova 2</option>
-        </select>
+        <form @submit.prevent="this.searchCharacter">
+            <select v-model="store.category">
+                <option selected value="">All</option>
+                <option :value="category" v-for="(category, index) in categoryOption" :key="index">{{ category }}
+                </option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
     </div>
 </template>
 
 <script>
-
+import { store } from '../../store';
 export default {
-    name: "SearchComponent"
+    name: "SearchComponent",
+    data() {
+        return {
+            store,
+            categoryOption: [
+                "Breaking+Bad",
+                "Better+Call+Saul"
+            ]
+        }
+    },
+    methods: {
+        searchCharacters() {
+            this.$emit('filterchar');
+        }
+    }
+
 }
 </script>
 
@@ -27,6 +45,14 @@ export default {
     select {
         border-radius: 5px;
         padding: 5px 10px;
+    }
+
+    button {
+        border: none;
+        border-radius: 5px;
+        background-color: white;
+        padding: 5px 10px;
+        margin-left: 1rem;
     }
 }
 </style>

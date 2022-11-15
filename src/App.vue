@@ -1,6 +1,6 @@
 <template>
   <AppHeader />
-  <AppMain :characters="characterList" />
+  <AppMain @filterchar="getCharacters" />
 </template>
 
 <script>
@@ -8,7 +8,7 @@ import axios from 'axios';
 import AppHeader from './assets/components/AppHeader.vue'
 import AppMain from './assets/components/AppMain.vue';
 import SearchComponent from './assets/components/SearchComponent.vue';
-// import { store } from './store';
+import { store } from './store';
 
 export default {
   components: {
@@ -18,28 +18,30 @@ export default {
   },
   data() {
     return {
-      //store : store
-      apiURL: 'https://breakingbadapi.com/api/characters',
-      characterList: [],
-      loading: false
+      store, //store : store
+      endPoint: 'characters',
+
     }
   },
   methods: {
 
 
     findDeleteCharacter(text) {
-      const index = this.characterList.findIndex(object => {
+      const index = store.characterList.findIndex(object => {
         return object.name === text;
       });
-      this.characterList.splice(index, 1);
+      store.characterList.splice(index, 1);
       // console.log(index)
     },
 
     getCharacters() {
-      this.loading = true
-      axios.get(this.apiURL).then(
+
+      store.loading = true
+      const apiurl = (store.category) ? store.apiURL + '?category=' + category : store.apiURL + this.endPoint;
+      axios.get(apiurl).then(
         (res) => {
-          this.characterList = [...res.data];
+          console.log(res.data)
+          store.characterList = [...res.data];
           // console.log(this.characterList)
           this.findDeleteCharacter('Lydia Rodarte-Quayle');
           this.findDeleteCharacter('Skinny Pete');

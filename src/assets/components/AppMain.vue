@@ -9,7 +9,7 @@
 
             <div class="my-row">
 
-                <CardComponent :obj="item" v-for="(item) in characters" :key="item.id" />
+                <CardComponent :obj="item" v-for="(item) in store.characterList" :key="item.id" />
 
 
             </div>
@@ -19,16 +19,21 @@
 </template>
 
 <script>
+
 import CardComponent from './CardComponent.vue';
 import SearchComponent from './SearchComponent.vue';
+import { store } from '../../store';
 export default {
     name: "AppMain",
     components: {
         CardComponent,
         SearchComponent,
     },
-    props: {
-        characters: Array
+    data() {
+        return {
+            store
+        }
+
     }
 }
 </script>
