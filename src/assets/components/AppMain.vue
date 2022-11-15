@@ -1,10 +1,10 @@
 <template>
     <main>
-        <SearchComponent />
+        <SearchComponent @filterchar="getCharacters" />
         <div class="container">
 
             <div class="counter">
-                <h3>Found 62 Characters</h3>
+                <h3>Found {{ store.characterList.length }} Characters</h3>
             </div>
 
             <div class="my-row">
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-
+import axios from 'axios';
 import CardComponent from './CardComponent.vue';
 import SearchComponent from './SearchComponent.vue';
 import { store } from '../../store';
@@ -31,10 +31,42 @@ export default {
     },
     data() {
         return {
-            store
+            store,
+
+
         }
 
-    }
+    }, methods: {
+
+
+        findDeleteCharacter(text) {
+            const index = store.characterList.findIndex(object => {
+                return object.name === text;
+            });
+            store.characterList.splice(index, 1);
+            // console.log(index)
+        },
+
+        getCharacters() {
+            console.log('ciao')
+            store.loading = true
+            const apiurl = (store.category) ? store.apiURL + '?category=' + store.category : store.apiURL;
+            axios.get(apiurl).then(
+                (res) => {
+
+                    store.characterList = [...res.data];
+                    // console.log(this.characterList)
+                    this.findDeleteCharacter('Lydia Rodarte-Quayle');
+                    this.findDeleteCharacter('Skinny Pete');
+                    this.findDeleteCharacter('Holly White');
+
+                }
+            )
+        }
+    },
+    created() {
+        this.getCharacters()
+    },
 }
 </script>
 

@@ -19,8 +19,8 @@ export default {
         return {
             store,
             categoryOption: [
-                "Breaking+Bad",
-                "Better+Call+Saul"
+                "Breaking Bad",
+                "Better Call Saul"
             ]
         }
     },
