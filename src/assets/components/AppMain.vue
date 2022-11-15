@@ -104,9 +104,18 @@ main {
         flex-wrap: wrap;
     }
 
+    @media screen and (max-width: 1120px) {
+
+
+        .my-card {
+            width: calc((100% - 80px) / 4) !important;
+
+        }
+    }
+
     @media screen and (max-width: 990px) {
         .my-card {
-            width: calc((100% - 100px) / 3) !important;
+            width: calc((100% - 60px) / 3) !important;
         }
     }
 
@@ -118,7 +127,19 @@ main {
 
         .my-card {
             margin: 0 auto;
-            width: calc((100% - 100px) / 1) !important;
+            width: calc((100% - 40px) / 2) !important;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+
+        .container {
+            padding: 0;
+        }
+
+        .my-card {
+            margin: 0 auto;
+            width: calc((100% - 80px) / 1) !important;
         }
     }
 
