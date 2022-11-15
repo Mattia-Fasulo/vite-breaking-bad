@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <form @submit.prevent="this.searchCharacter">
-            <select v-model="store.category">
+        <form @submit.prevent="searchCharacters">
+            <select name="categoryOp" v-model="store.category">
                 <option selected value="">All</option>
                 <option :value="category" v-for="(category, index) in categoryOption" :key="index">{{ category }}
                 </option>
