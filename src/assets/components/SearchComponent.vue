@@ -9,15 +9,20 @@
 </template>
 
 <script>
+
 export default {
     name: "SearchComponent"
 }
 </script>
 
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
+
 .container {
     height: 50px;
     margin-top: 2rem;
+    background-color: $dark-grey !important;
 
     select {
         border-radius: 5px;

@@ -1,4 +1,5 @@
 <template>
+
     <div class="my-card">
         <div class="my-card-img">
             <img :src="obj.img" :alt="obj.name">
@@ -9,6 +10,7 @@
             <span>{{ obj.status }}</span>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -25,25 +27,22 @@ export default {
 @use '../styles/partials/mixins' as *;
 
 .my-card {
-    width: 100%;
-    height: 400px;
-    margin: 30px 0;
     background-color: $dark-grey;
-
+    width: calc((100% - 100px) / 5);
+    height: 400px;
 
     .my-card-img {
-        padding: 10px;
+        padding: 15px;
         width: 100%;
-
 
         img {
             width: 100%;
-            height: 250px;
+            height: 230px;
         }
     }
 
     .my-card-text {
-        padding: 1rem;
+        padding: 15px;
         text-align: center;
 
         h3 {

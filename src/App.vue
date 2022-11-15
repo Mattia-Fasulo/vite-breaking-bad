@@ -1,6 +1,5 @@
 <template>
   <AppHeader />
-  <SearchComponent />
   <AppMain :characters="characterList" />
 </template>
 
@@ -9,6 +8,8 @@ import axios from 'axios';
 import AppHeader from './assets/components/AppHeader.vue'
 import AppMain from './assets/components/AppMain.vue';
 import SearchComponent from './assets/components/SearchComponent.vue';
+// import { store } from './store';
+
 export default {
   components: {
     AppHeader,
@@ -17,6 +18,7 @@ export default {
   },
   data() {
     return {
+      //store : store
       apiURL: 'https://breakingbadapi.com/api/characters',
       characterList: [],
       loading: false

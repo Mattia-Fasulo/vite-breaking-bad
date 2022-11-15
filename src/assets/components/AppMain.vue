@@ -1,34 +1,34 @@
 <template>
     <main>
+        <SearchComponent />
         <div class="container">
 
-            <div class="found">
+            <div class="counter">
                 <h3>Found 62 Characters</h3>
             </div>
 
-            <div class="row">
-                <div class="col col-md-6" v-for="(item, index) in characters" :key="item.id">
-                    <CardComponent :obj="item" />
-                </div>
+            <div class="my-row">
 
-
-
+                <CardComponent :obj="item" v-for="(item) in characters" :key="item.id" />
 
 
             </div>
+
         </div>
     </main>
 </template>
 
 <script>
-import CardComponent from './CardComponent.vue'
+import CardComponent from './CardComponent.vue';
+import SearchComponent from './SearchComponent.vue';
 export default {
     name: "AppMain",
     components: {
-        CardComponent
+        CardComponent,
+        SearchComponent,
     },
     props: {
-        characters: []
+        characters: Array
     }
 }
 </script>
@@ -45,10 +45,11 @@ main {
         background-color: white;
         padding: 2.5rem;
 
-        .found {
+        .counter {
             padding: 1rem;
             background-color: $text-color;
             vertical-align: middle;
+
 
             h3 {
                 font-size: 1rem;
@@ -57,13 +58,66 @@ main {
         }
     }
 
-    .row {
+    .my-row {
+        display: flex;
+        margin: 0 auto;
         padding: 1rem;
+        width: 100%;
+        gap: 25px;
+        flex-wrap: wrap;
 
-        .col {
-            width: calc(100% / 5);
+
+
+        .my-card {
+            background-color: $dark-grey;
+            width: calc((100% - 100px) / 5);
+            height: 400px;
+
+            .my-card-img {
+                padding: 15px;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 230px;
+                }
+            }
+
+            .my-card-text {
+                padding: 15px;
+                text-align: center;
+
+                h3 {
+                    text-transform: uppercase;
+                    font-size: 1rem;
+                }
+
+                p {
+                    margin-bottom: 0px;
+                }
+
+                p,
+                span {
+                    color: grey;
+                }
+            }
+        }
+
+    }
+
+    @media screen and (max-width: 990px) {
+        .my-card {
+            width: calc((100% - 100px) / 4) !important;
         }
     }
+
+    // .row {
+    //     padding: 1rem;
+
+    //     .col {
+    //         width: calc(100% / 5);
+    //     }
+    // }
 
 
 }
