@@ -102,60 +102,25 @@ main {
         width: 100%;
         gap: 25px;
         flex-wrap: wrap;
-
-
-
-        .my-card {
-            background-color: $dark-grey;
-            width: calc((100% - 100px) / 5);
-            height: 400px;
-
-            .my-card-img {
-                padding: 15px;
-                width: 100%;
-
-                img {
-                    width: 100%;
-                    height: 230px;
-                }
-            }
-
-            .my-card-text {
-                padding: 15px;
-                text-align: center;
-
-                h3 {
-                    text-transform: uppercase;
-                    font-size: 1rem;
-                }
-
-                p {
-                    margin-bottom: 0px;
-                }
-
-                p,
-                span {
-                    color: grey;
-                }
-            }
-        }
-
     }
 
     @media screen and (max-width: 990px) {
         .my-card {
-            width: calc((100% - 100px) / 4) !important;
+            width: calc((100% - 100px) / 3) !important;
         }
     }
 
-    // .row {
-    //     padding: 1rem;
+    @media screen and (max-width: 770px) {
 
-    //     .col {
-    //         width: calc(100% / 5);
-    //     }
-    // }
+        .container {
+            padding: 0;
+        }
 
+        .my-card {
+            margin: 0 auto;
+            width: calc((100% - 100px) / 1) !important;
+        }
+    }
 
 }
 </style>
