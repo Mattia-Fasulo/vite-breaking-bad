@@ -1,13 +1,13 @@
 <template>
     <div class="container">
-        <form @submit.prevent="searchCharacters">
-            <select name="categoryOp" v-model="store.category">
-                <option selected value="">All</option>
-                <option :value="category" v-for="(category, index) in categoryOption" :key="index">{{ category }}
-                </option>
-            </select>
-            <button type="submit">Search</button>
-        </form>
+
+        <select name="categoryOp" @change="searchCharacters" v-model="store.category">
+            <option selected value="">All</option>
+            <option :value="category" v-for="(category, index) in categoryOption" :key="index">{{ category }}
+            </option>
+        </select>
+
+
     </div>
 </template>
 
