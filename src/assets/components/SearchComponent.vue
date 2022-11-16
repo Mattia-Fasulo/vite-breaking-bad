@@ -54,5 +54,15 @@ export default {
         padding: 5px 10px;
         margin-left: 1rem;
     }
+
+    @media screen and (max-width: 767px) {
+
+        select {
+            margin-bottom: 20px;
+        }
+
+    }
+
+
 }
 </style>
